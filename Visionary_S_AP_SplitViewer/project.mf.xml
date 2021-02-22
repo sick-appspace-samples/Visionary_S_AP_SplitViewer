@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest>
+    <application name="Visionary_S_AP_SplitViewer">
+        <crown name="Visionary_S_AP_SplitViewer">
+            <desc>user script</desc>
+            <serves/>
+        </crown>
+        <crown name="Image">
+            <uses/>
+            <crown name="Provider">
+                <uses/>
+                <crown name="Camera">
+                    <uses>
+                        <event name="OnNewImage"/>
+                        <function name="create"/>
+                        <function name="start"/>
+                        <function name="getInitialCameraModel"/>
+                        <function name="register"/>
+                        <function name="stop"/>
+                    </uses>
+                </crown>
+            </crown>
+        </crown>
+        <crown name="Engine">
+            <uses>
+                <event name="OnStarted"/>
+            </uses>
+        </crown>
+        <crown name="View">
+            <uses>
+                <function name="create"/>
+                <function name="addDepthmap"/>
+                <function name="present"/>
+            </uses>
+            <crown name="ImageDecoration">
+                <uses>
+                    <function name="create"/>
+                    <function name="setRange"/>
+                </uses>
+            </crown>
+        </crown>
+        <crown name="Script">
+            <uses>
+                <function name="register"/>
+            </uses>
+        </crown>
+        <meta key="author">AppSpace Sample</meta>
+        <meta key="version">1.0</meta>
+        <meta key="priority">low</meta>
+        <meta key="read-protected">false</meta>
+        <meta key="copy-protected">false</meta>
+        <entry default="Visionary_S_AP_SplitViewer.lua" path="scripts"/>
+    </application>
+</manifest>
