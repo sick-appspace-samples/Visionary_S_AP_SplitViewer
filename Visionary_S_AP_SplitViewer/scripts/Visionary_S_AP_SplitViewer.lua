@@ -1,24 +1,24 @@
 --[[----------------------------------------------------------------------------
 
   Application Name: Visionary_S_AP_SplitViewer
-    
+
   Summary:
   Show the distance image, statemap and color that the camera acquired
-  
+
   Description:
   Set up the camera to take live images continuously. React to the "OnNewImage"
   event and display the distance (local-Z), statemap and color image in a 2D and
   3D viewer, using the addDepthMap function.
-  
+
   How to run:
   Start by running the app (F5) or debugging (F7+F10).
   Set a breakpoint on the first row inside the main function to debug step-by-step.
   See the results in the different image viewer on the DevicePage.
-  
+
   More Information:
   If you want to run this app on an emulator some changes are needed to get images.
   The statemap should be used as an error map for overlaying.
-    
+
 ------------------------------------------------------------------------------]]
 --Start of Global Scope---------------------------------------------------------
 -- Variables, constants, serves etc. should be declared here.
@@ -50,7 +50,8 @@ end
 --Registration of the 'main' function to the 'Engine.OnStarted' event
 Script.register("Engine.OnStarted", main)
 
---@handleOnNewImage(image:Image,sensordata:SensorData)
+---@param image Image
+---@param sensordata SensorData
 local function handleOnNewImage(images)
   -- Views, adds the distance image as default, second one is StateMap and third is RGB
   View.addDepthmap(viewer2D, images, cameraModel, {decoLocalZ, decoStatemap}, {"Local Z", "StateMap", "Color"})
